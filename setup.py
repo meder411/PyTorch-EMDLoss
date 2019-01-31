@@ -23,7 +23,7 @@ setup(
 		'emd', 
 	],
 	package_dir={
-		'emd : layer'
+		'emd' : 'layer'
 	},
 	cmdclass={'build_ext': BuildExtension}, 
 )
