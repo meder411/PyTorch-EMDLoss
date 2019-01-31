@@ -16,10 +16,9 @@ cost = dist(p1, p2)
 emd_time = time.time() - s
 
 print('Time: ', emd_time)
-print(cost.shape)
+print(cost)
 loss = torch.sum(cost)
 print(loss)
 loss.backward()
 print(p1.grad)
-print(p1.grad.shape)
-print(p2.grad.shape)
+print(p2.grad)
