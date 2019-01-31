@@ -1,4 +1,3 @@
-import os.path as osp
 from setuptools import setup
 from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
@@ -14,8 +13,8 @@ setup(
 		CUDAExtension(
 			name='_emd', 
 			sources=[
-				osp.join('pkg', 'src', 'emd.cpp'),
-				osp.join('pkg', 'src', 'emd.cu'),
+				'pkg/src/emd.cpp',
+				'pkg/src/emd.cu',
 			],
 			include_dirs=['pkg/include'],
 		),
