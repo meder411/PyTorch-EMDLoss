@@ -148,7 +148,6 @@ __global__ void approx_match_kernel(
 							}
 						}
 						v *= level;
-						printf("v: %f\n", v);
 						sumr += exp(v)*buf[k*(d+1)+d];
 					}
 					__syncthreads();
