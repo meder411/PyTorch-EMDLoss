@@ -7,4 +7,4 @@ Original source code can be found [here](https://github.com/fxia22/pointGAN/tree
 
 **Limitations and Known Bugs:**
  - Double tensors must have <=11 dimensions while float tensors must have <=23 dimensions. This is due to the use of CUDA shared memory in the computation. This shared memory is limited by the hardware to 48kB.
-- When handling larger point sets (M, N > ~2000), the CUDA kernel will fail. I think this is due to an overflow error in computing the approximate matching kernel. Any suggestions to fix this would be greatly appreciated. 
+- When handling larger point sets (M, N > ~2000), the CUDA kernel will fail. I think this is due to an overflow error in computing the approximate matching kernel. Any suggestions to fix this would be greatly appreciated. I have pinpointed the source of the bug [here](https://github.com/meder411/PyTorch-EMDLoss/blob/master/pkg/include/cuda/emd.cuh#L160).
