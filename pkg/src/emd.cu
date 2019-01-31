@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "cuda/emd.cuh"
+#include "emd.cuh"
 
 
 std::vector<at::Tensor> emd_forward_cuda(
