@@ -14,7 +14,7 @@ setup(
 			name='_emd', 
 			sources=[
 				'pkg/src/emd.cpp',
-				'pkg/src/emd.cu',
+				'pkg/src/cuda/emd.cu',
 			],
 			include_dirs=['pkg/include'],
 		),
