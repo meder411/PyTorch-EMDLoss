@@ -2,7 +2,7 @@ import torch
 
 import time
 
-from mapped_convolution import EMDLoss
+from emd import EMDLoss
 
 dist =  EMDLoss()
 
