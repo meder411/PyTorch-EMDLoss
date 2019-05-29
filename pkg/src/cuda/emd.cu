@@ -13,7 +13,6 @@ std::vector<at::Tensor> emd_forward_cuda(
 	const int64_t batch_size = xyz1.size(0);
 	const int64_t num_pts_1 = xyz1.size(1);
 	const int64_t num_pts_2 = xyz2.size(1);
-	const int64_t dim = xyz1.size(2);
 
 	// Allocate necessary data structures
 	at::Tensor match = at::zeros({batch_size, num_pts_1, num_pts_2}, 
@@ -24,7 +23,7 @@ std::vector<at::Tensor> emd_forward_cuda(
 
 	// Find the approximate matching
 	approx_match(
-		batch_size, num_pts_1, num_pts_2, dim,  
+		batch_size, num_pts_1, num_pts_2, 
 		xyz1,
 		xyz2, 
 		match,
@@ -33,7 +32,7 @@ std::vector<at::Tensor> emd_forward_cuda(
 
 	// Compute the matching cost
 	match_cost(
-		batch_size, num_pts_1, num_pts_2, dim, 
+		batch_size, num_pts_1, num_pts_2,
 		xyz1,
 		xyz2, 
 		match,
